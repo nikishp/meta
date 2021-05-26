@@ -1,0 +1,45 @@
+<?php
+
+$method = $_SERVER['REQUEST_METHOD'];
+
+$project_name = 'SiteTitle';
+$form_subject = trim($_POST["form_subject"]);
+$mail_to  = "zverygi2@gmail.com"; 
+
+//Script Foreach 
+$c = true;
+if ( $method === 'POST' ) {
+  foreach ( $_POST as $key => $value ) {
+    if ( $value != "" && $key != "project_name" && $key != "mail_to" && $key != "form_subject" ) {
+      $message .= "
+			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+			<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+			<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+		</tr>
+		";
+    }
+  }
+} else if ( $method === 'GET' ) {
+  foreach ( $_GET as $key => $value ) {
+    if ( $value != "" && $key != "project_name" && $key != "mail_to" && $key != "form_subject" ) {
+      $message .= "
+			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+			<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+			<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+		</tr>
+		";
+    }
+  }
+}
+$message = "<table style='width: 100%;'>$message</table>";
+function adopt($text) {
+  return '=?UTF-8?B?'.Base64_encode($text).'?=';
+}
+$headers = "MIME-Version: 1.0" . PHP_EOL .
+  "Content-Type: text/html; charset=utf-8" . PHP_EOL .
+//  'From: '.adopt($project_name).' <'."$project_name"."@admin".'>' . PHP_EOL .
+  //еще одна запись для мейл.ру
+  'From: '.adopt($project_name).' <'.$project_name.'@'.$_SERVER['SERVER_NAME'].'>' . PHP_EOL .
+  'Reply-To: '.$mail_to.'' . PHP_EOL;
+
+mail($mail_to, adopt($form_subject), $message, $headers);

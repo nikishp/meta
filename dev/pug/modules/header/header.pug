@@ -1,0 +1,80 @@
+mixin header(name)
+  - name = name || ''
+  header(class="header " + name)
+    .container
+      .row
+        .col-12
+          .header__box          
+            .header__box-item.logo
+              .logo__img
+                +svg('logo')
+              .logo__desc Монтажная компания, специализирующаяся на  противопожарных и охранных системах «под ключ» в Москве и МО 
+                b с 2006 года
+            .header__box-itema.mchs(href="#mchs", data-fancybox="mchs")
+              +imggen('mcs.png')
+              span Проверка МЧС уже была или скоро будет?
+            .header__box-item.email
+              a(href="mailtl:info@mail.ru")
+                +svg("mail")
+                | info@mail.ru
+              .work-time Ежедневно c 09:00 до 21:00
+            .header__box-item.call
+              .call-text Звоните! Консультация бесплатная
+              a(href="tel:8 (916) 351-03-95")
+                +svg('phone')
+                | 8 (916) 351-03-95
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-

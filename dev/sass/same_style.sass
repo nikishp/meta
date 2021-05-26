@@ -1,0 +1,272 @@
+body
+  position: relative
+  min-width: 300px
+  font-family: $defFont
+  font-size: $baseFontSize+px
+  font-weight: 400
+  color: $def
+  line-height: 1.2
+  //line-height: 1.2 //if line height "auto" in Photoshop
+
+*::placeholder
+  color: inherit
+  opacity: 1
+  transition: $tr
+*:focus::placeholder
+  opacity: 0
+*::selection
+  color: #fff
+  background-color: red
+
+// body input:focus:required:invalid,
+// body textarea:focus:required:invalid
+//   color: #666
+// body input:required:valid,
+// body textarea:required:valid
+//   color: #666
+
+*
+  box-sizing: border-box
+  outline: none !important
+  &::before,&::after
+    box-sizing: border-box
+//.clearfix
+  *zoom: 1
+  &::before, &::after
+    content: ""
+    display: table
+  &::after
+    clear: both
+
+//.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+svg
+  display: inline-block
+  transition: fill .25s linear
+img
+  max-width: 100%
+  height: auto
+img.lazy // добавления такого класса скрывает значок битой картинки пока картинка не загружена
+  display: none
+br
+  line-height: 0
+  font-size: 0
+a, input, button
+  color: inherit
+  outline: none
+  border: none
+  box-sizing: border-box
+  background: transparent
+  text-decoration: none
+  &:hover
+    outline: none
+    // color: inherit
+    text-decoration: none
+  &:focus
+    outline: none
+    // color: inherit
+    text-decoration: none
+  &:active
+    outline: none
+    // color: inherit
+    text-decoration: none
+// a
+  text-decoration: underline
+  // transition: color .25s linear, background .25s linear
+  &:hover
+    color: #fff
+    background: #0275d8
+    text-decoration: underline
+input,textarea
+  border: 1px solid #000
+select
+  outline: none
+button
+  cursor: pointer
+label
+  cursor: pointer
+  user-select: none //запрещает выделения при клике
+  //&:active
+    //user-select: none //Подпись, выделяемая при клике извне
+  &.error
+    color: red
+textarea
+  resize: none //запрещает изменения размера мишью
+  outline: none
+  color: inherit
+// ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+h1,h2,h3,h4,h5,h6
+  margin: 0
+  font-weight: normal
+  line-height: 1.3
+
+.hidden
+  display: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+// фикс бага ?? с случайной анимацией перелистывания цифр
+//.flip-clock-wrapper ul.play li.flip-clock-active
+  animation: none
+
+.btn
+  position: relative
+  z-index: 1
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  min-width: 100px
+  cursor: pointer
+  user-select: none
+  background: lightgrey
+  transition: $tr
+  // +blick
+
+button[type='submit']
+  .form-load
+    width: 0
+    height: 20px
+    line-height: 0
+    font-size: 0
+    overflow: hidden
+    .lds-spinner
+      width: 100%
+      height: 100%
+      fill: currentColor
+
+//.counter
+  display: flex
+  font-size: 40px
+  font-weight: 700
+  .counter__item
+    display: flex
+    align-items: center
+  .counter__item-info
+    margin: 0 10px
+    text-align: center
+  .counter__item-numb
+
+  .counter__item-title
+    // font-size: 30px
+  .counter__item-dots
+    font-size: 0
+    animation: blinking 1s infinite cubic-bezier(1,-1.29, 1, 1)
+    svg
+      width: 20px
+      height: 60px
+      fill: currentColor
+
+//@keyframes blinking
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 0
+// count style end
+
+//animation: sliding infinite ease 3s
+@keyframes sliding
+  0%,to
+    transform: translateY(0)
+
+  50%
+    transform: translateY(20px)
+
+
+.sl-btn
+  cursor: pointer
+
+
+[class*="--aic"]
+  align-items: center
+
+$mt: 5
+@while $mt <= 150
+  .mt-#{$mt}
+    margin-top: $mt + px
+  $mt: $mt + 5
+
+$mb: 5
+@while $mb <= 150
+  .mb-#{$mb}
+    margin-bottom: $mb + px
+  $mb: $mb + 5
+
+$pt: 5
+@while $pt <= 150
+  .pt-#{$pt}
+    padding-top: $pt + px
+  $pt: $pt + 5
+
+$pb: 5
+@while $pb <= 150
+  .pb-#{$pb}
+    padding-bottom: $pb + px
+  $pb: $pb + 5
+
+
+
+.s-content
+  min-height: calc(100vh - 200px)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 50px 0
+  text-align: center
+  +bg
+  +max(991)
+    padding: 80px 0
+    min-height: 0
+
+
+.s-content__ico
+  margin-bottom: 50px
+  font-size: 0
+  svg
+    +size(150)
+    fill: red
+
+.s-content__404
+.s-content__ico-text
+  text-shadow: 0 11px 21px rgba(red, 0.4)
+  color: red
+  font-size: 232px
+  font-weight: 700
+  line-height: 1
+  text-transform: uppercase
+  +max(991)
+    font-size: 162px
+  +max(576)
+    font-size: 140px
+
+.s-content__title
+  margin-bottom: 40px
+  font-size: 40px
+  font-weight: 700
+  line-height: 1.4
+  text-transform: uppercase
+  +max(991)
+    margin-bottom: 20px
+    font-size: 23px
+    font-weight: 700
+    line-height: 1.39
+.s-content__subtitle
+  margin: 40px 0
+  font-size: 20px
+  line-height: 1.3
+  +max(991)
+    margin-top: 20px
+    font-size: 17px
+
+.s-content__acton
+  margin-top: 50px
+  +max(991)
+    margin-top: 40px

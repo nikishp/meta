@@ -1,0 +1,59 @@
+{
+  "name": "Gulp",
+  "version": "3.0.0",
+  "description": "The streaming build system.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Niki Simple",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikishp/Gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "colors": "^1.4.0",
+    "css-mqpacker": "^7.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-fs": "0.0.2",
+    "gulp-image": "^6.2.1",
+    "gulp-load-plugins": "^2.0.6",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-remove-code": "^3.0.4",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp.spritesmith": "^6.11.0",
+    "smart-grid": "^2.1.2",
+    "sort-css-media-queries": "^1.5.4",
+    "gulp-prettyerror": "^2.0.0"
+  },
+  "dependencies": {
+    "swiper": "^6.5.0",
+    "@fancyapps/fancybox": "^3.5.7",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "jquery-form-styler": "^2.0.2",
+    "jquery-lazy": "^1.7.11",
+    "jquery-nice-select": "^1.1.0",
+    "jquery-validation": "^1.19.3",
+    "normalize.css": "^8.0.1",
+    "object-fit-images": "^3.2.4",
+    "parallax-js": "^3.1.0",
+    "slick-carousel": "^1.8.1",
+    "nice-select2": "^1.0.0",
+    "svg4everybody": "^2.1.9"
+  }
+}

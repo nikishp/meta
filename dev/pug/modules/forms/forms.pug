@@ -1,0 +1,61 @@
+mixin form_default(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  if formId
+    form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+      +form_default_body()
+  else
+    form(class='form ' + formClass, action='#', enctype='multipart/form-data')
+      +form_default_body()
+
+mixin form_default_body()
+  // Hidden Required Fields
+  input(name='form_subject', value='' + formSubject, type='hidden')
+  // END Hidden Required Fields
+  if formTitle
+    .form__title !{formTitle}
+  if formSubtitle
+    .form__subtitle !{formSubtitle}
+  .form__item
+    input(type='text', required='', name='name', placeholder='name')
+  .form__item
+    input(type='email', required='', name='mail', placeholder='mail')
+  .form__item
+    input(type='tel', required='', name='phone', placeholder='phone')
+  .form__item
+    input(type="file", name="userfile[]", multiple)
+  .form__action
+    button(type='submit').btn !{formButton}
+      span.form-load
+        svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+          g
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+          g(transform='rotate(36 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+          g(transform='rotate(72 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+          g(transform='rotate(108 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+          g(transform='rotate(144 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+          g(transform='rotate(180 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+          g(transform='rotate(216 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+          g(transform='rotate(252 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+          g(transform='rotate(288 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+          g(transform='rotate(324 50 50)')
+            rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+            animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+  .form__police

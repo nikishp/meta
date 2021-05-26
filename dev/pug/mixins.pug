@@ -1,0 +1,19 @@
+mixin svg(name,mod)
+  - mod = mod || ''
+  svg(class="svg svg--" + name + ' ' + mod)
+    use(xlink:href="img/svg/symbol/sprite.svg#" + name)
+
+mixin svg_c(name,mod)
+  - mod = mod || ''
+  svg(class="svg svg--colored svg--" + name + ' ' + mod)
+    use(xlink:href="img/svg/symbol/sprite-colored.svg#" + name)
+
+mixin imggen(src,className,alt)
+  - className = className || ''
+  - alt = alt || 'alternate text for image'
+  img(src="img/general/"+src, class=""+className, alt=""+alt)
+
+mixin imgcon(src,className,alt)
+  - className = className || ''
+  - alt = alt || 'alternate text for image'
+  img(src="img/content/"+src, class=""+className, alt=""+alt)

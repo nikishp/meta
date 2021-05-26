@@ -1,0 +1,52 @@
+include ../modules/include/include.pug
+
+doctype html
+html(lang="ru-RU")
+  head
+    block head
+    +head()
+  body.thank-page
+    //+header()
+    block content
+    //+foot()
+    +hidden()
+
+    +script()
+    block script
+
+      script.
+        //furntion to auto download file
+        //-  в этой функции файлы типа пдф будут открыты в окне автоматически
+        //- $(function() {
+        //-   $('a[data-auto-download]').each(function(){
+        //-     var $this = $(this);
+        //-     setTimeout(function() {
+        //-       window.location = $this.attr('href');
+        //-     }, 2000);
+        //-   });
+        //- });
+
+        //function to return main page
+        var curId = localStorage.getItem('form');
+        var currentPage = localStorage.getItem('currentPage');
+
+        // в этой функции любые файлы будут скачиваться
+        //- if(curId == 'you_form_id'){
+        //-   $(function() {
+        //-     $('.dwnlink').each(function(){
+        //-       var $this = $(this);
+        //-       setTimeout(function() {
+        //-         $('.dwnlink')[0].click();
+        //-       }, 500);
+        //-     });
+        //-   });
+        //- }
+
+        // автоматический возврат на главную страницу
+        setTimeout(function(){
+          //- window.location.href = 'index.html#' + curId;
+          window.location.href = currentPage;
+        }, 3000);
+
+      // call auto download file
+      // a(class="dwnlink", data-auto-download, href='file_path', download="file_name_when_download_start")
